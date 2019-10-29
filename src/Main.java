@@ -5,15 +5,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*Scanner sc = new Scanner(System.in);
-
+        Scanner sc = new Scanner(System.in);
+        MyHashSet wordsText = new MyHashSet(1006);
         // Step 1: load our txt file of English words.
         try {
-            BufferedReader rd = new BufferedReader(new FileReader("words.txt"));
+            BufferedReader rd = new BufferedReader(new FileReader("F:\\Users\\horsey\\Downloads\\skool\\untitled1\\src\\words.txt"));
 
             String currentLine = null;
             while ((currentLine = rd.readLine()) != null) {
                 // TODO do something with the words we're reading
+                wordsText.add(currentLine);
             }
         } catch (IOException e) {
             System.out.println("Exception loading words.txt.");
@@ -30,15 +31,21 @@ public class Main {
 
         // Step 3: print all misspelled words
         // TODO implement this using your own version of a HashSet.*/
+        for (int i = 0; i < sentenceWords.length; i++) {
+            if( !wordsText.contains(sentenceWords[i])) {
+                System.out.println(sentenceWords[i]);
+            }
+        }
 
-        MyHashSet set = new MyHashSet(10);
+       /* MyHashSet set = new MyHashSet(10);
+        MyHashSetNode node = new MyHashSetNode("Dog");
         set.add("Cow");
         set.add("Cat");
         set.add("Dog");
-        System.out.print(set.buckets[8]);
-        if(set.contains("Ct"))
+        System.out.println(set.buckets[node.hashCode() % set.capacity]);
+        if(set.contains("Cat"))
             System.out.println("Yes");
         else
-            System.out.println("No");
+            System.out.println("No");*/
     }
 }
